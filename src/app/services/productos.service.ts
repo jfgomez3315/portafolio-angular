@@ -18,8 +18,11 @@ export class ProductosService {
     this.http.get('https://angular-html-dd2d9.firebaseio.com/productos_idx.json')
       .subscribe( (resp: Producto[]) => {
         console.log(resp);
+        this.productos = resp;
 
-        this.cargando = false;
+        setTimeout(() => {
+          this.cargando = false;
+        }, 2000);
       });
   }
 }
